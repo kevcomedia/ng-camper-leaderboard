@@ -10,21 +10,19 @@ import { Top100Service } from './top-100.service';
 })
 export class AppComponent implements OnInit {
   title = 'Camper Leaderboard';
-  recent: Camper[] = null;
-  alltime: Camper[] = null;
+  campers: Camper[] = null;
 
   constructor(private top100Service: Top100Service) { }
 
   ngOnInit(): void {
     this.getRecent();
-    this.getAlltime();
   }
 
   getRecent(): void {
-    this.recent = this.top100Service.getRecent();
+    this.campers = this.top100Service.getRecent();
   }
 
   getAlltime(): void {
-    this.alltime = this.top100Service.getAlltime();
+    this.campers = this.top100Service.getAlltime();
   }
 }
