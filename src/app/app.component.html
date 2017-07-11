@@ -11,3 +11,25 @@
     </div>
   </div>
 </nav>
+
+<div class="container">
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <th>Username</th>
+        <th>Recent Points</th>
+        <th>Alltime Points</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let camper of recent">
+          <td>
+            <img [src]="camper.img" [alt]="camper.username" width="50" height="50">
+            {{camper.username}}
+          </td>
+          <td>{{camper.recent}}</td>
+          <td>{{camper.alltime}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
