@@ -5,26 +5,16 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CamperTableComponent } from './camper-table.component';
 
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CamperTableComponent,
-
+    CamperTableComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([
-      {
-        path: ':set', // as in 'set of highest alltime/recent points
-        component: CamperTableComponent
-      },
-      {
-        path: '',
-        redirectTo: '/recent',
-        pathMatch: 'full'
-      }
-    ])
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
