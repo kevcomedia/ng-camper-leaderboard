@@ -6,11 +6,11 @@ import { ALLTIME } from './mock-alltime';
 
 @Injectable()
 export class Top100Service {
-  getRecent(): Camper[] {
-    return RECENT;
+  getRecent(): Promise<Camper[]> {
+    return Promise.resolve(RECENT);
   }
 
-  getAlltime(): any {
-    return ALLTIME;
+  getAlltime(): Promise<Camper[]> {
+    return Promise.resolve(ALLTIME);
   }
 }
