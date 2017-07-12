@@ -1,16 +1,27 @@
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+
+import 'rxjs/add/operator/toPromise';
 
 import { Camper } from './camper';
-import { RECENT } from './mock-recent';
-import { ALLTIME } from './mock-alltime';
 
 @Injectable()
 export class Top100Service {
+  constructor(private http: Http) { }
+
   getRecent(): Promise<Camper[]> {
-    return Promise.resolve(RECENT);
+    return this.getTop100('recent');
   }
 
   getAlltime(): Promise<Camper[]> {
-    return Promise.resolve(ALLTIME);
+    return this.getTop100('alltime');
+  }
+
+  private getTop100(set: string): Promise<Camper[]> {
+    const baseUrl = 'https://fcctop100.herokuapp.com/api/fccusers/top/';
+    return this.http.get(baseUrl + set)
+      .toPromise()
+      .then(response => response.json() as Camper[]);
+      // TODO add proper error handler
   }
 }
