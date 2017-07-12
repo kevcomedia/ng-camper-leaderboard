@@ -1,12 +1,14 @@
 <div class="table-responsive" *ngIf="campers">
   <table class="table table-striped">
     <thead>
+      <th><span class="sr-only">Rank</span></th>
       <th>Username</th>
       <th>Recent Points</th>
       <th>Alltime Points</th>
     </thead>
     <tbody>
-      <tr *ngFor="let camper of campers">
+      <tr *ngFor="let camper of campers; let i = index">
+        <td>{{i + 1}}</td>
         <td>
           <img [src]="camper.img" [alt]="camper.username" width="50" height="50">
           {{camper.username}}
