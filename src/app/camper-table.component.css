@@ -1,0 +1,7 @@
+td {
+  /* There's a high-specificity selector in Bootstrap that sets the
+     `vertical-align` to `top` for `td` elements. Rather than make a
+     selector with even higher specificity, I used !important instead. I can't
+     see an easier/better workaround.  */
+  vertical-align: middle !important;
+}

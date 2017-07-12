@@ -9,6 +9,7 @@ import { Top100Service } from './top-100.service';
 @Component({
   selector: 'camper-table',
   templateUrl: './camper-table.component.html',
+  styleUrls: ['./camper-table.component.css'],
   providers: [Top100Service]
 })
 export class CamperTableComponent implements OnInit {
