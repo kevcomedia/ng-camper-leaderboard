@@ -22,6 +22,9 @@ export class CamperTableComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap
       .switchMap((params: ParamMap) => {
+        // This causes the table to not render while we wait
+        this.campers = null;
+
         if (params.get('set') == 'recent') {
           return this.top100Service.getRecent();
         }
