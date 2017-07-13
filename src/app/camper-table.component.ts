@@ -29,11 +29,11 @@ export class CamperTableComponent implements OnInit {
         this.caption = '';
 
         if (params.get('set') == 'recent') {
-          this.caption = 'Top 100 Campers during the last 30 days';
+          this.caption = 'Top 100 during the last 30 days';
           return this.top100Service.getRecent();
         }
         else if (params.get('set') == 'alltime') {
-          this.caption = 'Top 100 Campers of all time';
+          this.caption = 'Top 100 of all time';
           return this.top100Service.getAlltime();
         }
         else {
