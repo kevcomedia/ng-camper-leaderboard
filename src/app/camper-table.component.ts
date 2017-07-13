@@ -14,6 +14,7 @@ import { Top100Service } from './top-100.service';
 })
 export class CamperTableComponent implements OnInit {
   campers: Camper[] = null;
+  caption = '';
 
   constructor(
     private top100Service: Top100Service,
@@ -25,11 +26,14 @@ export class CamperTableComponent implements OnInit {
       .switchMap((params: ParamMap) => {
         // This causes the table to not render while we wait
         this.campers = null;
+        this.caption = '';
 
         if (params.get('set') == 'recent') {
+          this.caption = 'Top 100 Campers during the last 30 days';
           return this.top100Service.getRecent();
         }
         else if (params.get('set') == 'alltime') {
+          this.caption = 'Top 100 Campers of all time';
           return this.top100Service.getAlltime();
         }
         // TODO add else block for invalid param values
