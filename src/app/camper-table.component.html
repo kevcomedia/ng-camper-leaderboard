@@ -10,8 +10,10 @@
       <tr *ngFor="let camper of campers; let i = index">
         <td>{{i + 1}}</td>
         <td>
-          <img [src]="camper.img" [alt]="camper.username">
-          {{camper.username}}
+          <a [href]="'https://github.com/' + camper.username" target="_blank">
+            <img [src]="camper.img" [alt]="camper.username">
+            {{camper.username}}
+          </a>
         </td>
         <td>{{camper.recent}}</td>
         <td>{{camper.alltime}}</td>
