@@ -1,3 +1,8 @@
+caption {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
 td {
   /* There's a high-specificity selector in Bootstrap that sets the
      `vertical-align` to `top` for `td` elements. Rather than make a
