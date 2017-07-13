@@ -1,0 +1,33 @@
+<div class="table-responsive" *ngIf="campers">
+  <table class="table table-striped">
+    <caption class="text-center">{{caption}}</caption>
+    <thead>
+      <th><span class="sr-only">Rank</span></th>
+      <th>Username</th>
+      <th>Recent Points</th>
+      <th>Alltime Points</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let camper of campers; let i = index">
+        <td>{{i + 1}}</td>
+        <td>
+          <a [href]="'https://github.com/' + camper.username" target="_blank">
+            <img [src]="camper.img" [alt]="camper.username">
+            {{camper.username}}
+          </a>
+        </td>
+        <td>{{camper.recent}}</td>
+        <td>{{camper.alltime}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- I used undefined because `campers` is in an undefined state -->
+<p class="text-center lead" *ngIf="campers === undefined">
+  <span class="fa fa-refresh fa-spin" aria-hidden="true"></span>
+  Hold on...
+</p>
+
+<!-- null because we know we got nothing -->
+<p class="text-center lead" *ngIf="campers === null">Nothing here</p>

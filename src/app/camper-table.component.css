@@ -1,0 +1,24 @@
+caption {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+td {
+  /* There's a high-specificity selector in Bootstrap that sets the
+     `vertical-align` to `top` for `td` elements. Rather than make a
+     selector with even higher specificity, I used !important instead. I can't
+     see an easier/better workaround.  */
+  vertical-align: middle !important;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+}
+
+@media screen and (max-width: 370px) {
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}
