@@ -23,7 +23,11 @@
   </table>
 </div>
 
-<p class="text-center lead" *ngIf="!campers">
+<!-- I used undefined because `campers` is in an undefined state -->
+<p class="text-center lead" *ngIf="campers === undefined">
   <span class="fa fa-refresh fa-spin" aria-hidden="true"></span>
   Hold on...
 </p>
+
+<!-- null because we know we got nothing -->
+<p class="text-center lead" *ngIf="campers === null">Nothing here</p>
