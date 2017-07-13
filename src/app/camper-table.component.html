@@ -10,7 +10,7 @@
       <tr *ngFor="let camper of campers; let i = index">
         <td>{{i + 1}}</td>
         <td>
-          <img [src]="camper.img" [alt]="camper.username" width="50" height="50">
+          <img [src]="camper.img" [alt]="camper.username">
           {{camper.username}}
         </td>
         <td>{{camper.recent}}</td>

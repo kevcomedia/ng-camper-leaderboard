@@ -5,3 +5,15 @@ td {
      see an easier/better workaround.  */
   vertical-align: middle !important;
 }
+
+img {
+  width: 50px;
+  height: 50px;
+}
+
+@media screen and (max-width: 370px) {
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}
