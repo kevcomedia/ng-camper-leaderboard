@@ -28,17 +28,16 @@ export class CamperTableComponent implements OnInit {
         this.campers = undefined;
         this.caption = '';
 
-        if (params.get('set') == 'recent') {
-          this.caption = 'Top 100 during the last 30 days';
-          return this.top100Service.getRecent();
-        }
-        else if (params.get('set') == 'alltime') {
-          this.caption = 'Top 100 of all time';
-          return this.top100Service.getAlltime();
-        }
-        else {
-          // Not sure if this is the way to go
-          return Promise.resolve(null);
+        switch (params.get('set')) {
+          case 'recent':
+            this.caption = 'Top 100 during the last 30 days';
+            return this.top100Service.getRecent();
+          case 'alltime':
+            this.caption = 'Top 100 of all time';
+            return this.top100Service.getAlltime();
+          default:
+            // Not sure if this is the way to go
+            return Promise.resolve(null);
         }
       })
       .subscribe(campers => this.campers = campers ? campers : null);
